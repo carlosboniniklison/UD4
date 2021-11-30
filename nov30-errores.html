@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+<style>
+    #boton {
+        color:blue;
+        background-color:gray;
+        padding:10px;
+    }
+</style>
+
+
+</head>
+
+<body>
+    <div id="cabecera">
+        <h2>Manejo de Errores</h2>
+        <h3>Ejemplos JavaScript</h3>
+    </div>
+    <div id="boton" onclick="ejemploError()"> Generar Error </div>
+
+    <script type="text/javascript">
+        function ejemploError() {
+            try {
+                var numeroUsuario = prompt('Introduzca un número del 1 al 9 por favor: ');
+                if (isNaN(numeroUsuario) || numeroUsuario < 1 || numeroUsuario > 9) {
+                    throw new Error('Número introducido no válido');
+                }
+            }
+            catch (e) { alert('Se produjo un error. Referencia: ' + e); }
+            finally { alert('Se ejecuta siempre haya o no captura de error'); }
+            alert('A continuación la siguiente instrucción que corresponda');
+        }
+    </script>
+</body>
+
+</html>
